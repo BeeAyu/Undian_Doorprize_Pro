@@ -7,6 +7,7 @@
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script src="./script.js" defer></script>
 </head>
+  
 <body>
 <header class="topbar"><div class="brand"><div class="logo-box"><img id="logoBpr" src="./assets/logo-bkk.png" alt="Logo BPR BKK Wonogiri"></div><div><h1>UNDIAN DOORPRIZE SPEKTAMADES 2026</h1><p>PT BPR BKK WONOGIRI (Perseroda)</p></div></div><button class="btn outline" id="btnFullscreen">⛶ FULLSCREEN</button></header>
 <main class="container">
@@ -17,7 +18,7 @@
 <div class="form-group"><label for="gambarHadiahInput">Pilih gambar hadiah (opsional)</label><input type="file" id="gambarHadiahInput" accept="image/*"><small>Gambar yang dipilih disimpan di browser bersama hadiah dan tetap ada setelah refresh.</small></div>
 <div class="form-group"><label for="minSaldo">Saldo minimum berhak ikut (Rp)</label><input id="minSaldo" type="number" min="0" step="50000" value="50000"><small>Default Rp50.000. Rekening di bawah batas ini tidak diikutkan.</small></div>
 <div class="form-group"><label for="kelipatanSaldo">Kelipatan saldo per peluang (Rp)</label><input id="kelipatanSaldo" type="number" min="1" step="50000" value="50000"><small>Setiap kelipatan saldo memberi tambahan peluang. Rp100.000 = 2 peluang jika kelipatan Rp50.000.</small></div>
-<div class="form-group"><label for="interval">Kecepatan pengacakan</label><select id="interval"><option value="45">Cepat</option><option value="90" selected>Normal</option><option value="300">Lambat</option></select></div>
+<div class="form-group"><label for="interval">Kecepatan pengacakan</label><select id="interval"><option value="45">Cepat</option><option value="90" selected>Normal</option><option value="10">Lambat</option></select></div>
 </div><div class="rule-note"><strong>Aturan undian:</strong> hanya rekening dengan saldo minimal sesuai pengaturan yang berhak ikut. Peluang dihitung berdasarkan kelipatan saldo; contoh saldo Rp150.000 dengan kelipatan Rp50.000 mendapat 3 peluang. Satu rekening hanya bisa menang satu kali.</div><div class="action-row"><button class="btn primary" id="btnMulai">▶ MULAI UNDIAN</button><button class="btn danger" id="btnStop" disabled>■ STOP</button><button class="btn success" id="btnSah" disabled>✔ SAH</button><button class="btn neutral" id="btnResetKandidat" disabled>BATALKAN KANDIDAT</button></div>
 <div class="stats"><div class="stat-card"><span>Rekening berhak ikut / nomor undian unik</span><strong id="totalPeserta">0</strong></div><div class="stat-card"><span>Total kupon / peluang berdasarkan saldo</span><strong id="totalKupon">0</strong></div><div class="stat-card"><span>Rekening sudah menang</span><strong id="totalMenang">0</strong></div><div class="stat-card"><span>Peserta eligible tersisa</span><strong id="totalSisa">0</strong></div></div><p class="coupon-note">Nomor undian unik dibuat satu per rekening yang memenuhi syarat. Total kupon/peluang dihitung dari kelipatan saldo; misalnya saldo Rp150.000 dengan kelipatan Rp50.000 menghasilkan 3 peluang untuk nomor undian rekening tersebut.</p><p id="statusImport" class="status-message">Silakan pilih file Excel peserta.</p></section>
 <section class="stage"><div class="stage-header"><div><span class="eyebrow">UNDIAN BERHADIAH</span><h2 id="judulHadiah">HADIAH UNDIAN</h2></div><div class="live-badge"><span class="live-dot"></span> LIVE DRAW</div></div>
